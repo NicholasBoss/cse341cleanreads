@@ -1,7 +1,6 @@
 const express = require('express');
 const expressLayouts = require("express-ejs-layouts")
 const routes = require('./routes');
-const contactRoute = require('./routes/contacts')
 const static = require("./routes/static")
 const mongodb = require('./database/connect')
 const bodyParser = require('body-parser');

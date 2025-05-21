@@ -1,0 +1,28 @@
+
+[
+    {
+        "_id": { "$oid": "665f1a1e1a1e1a1e1a1e1a01" },
+        "publisher_name": "Simon & Schuster",
+        "publish_location": "New York, NY"
+    },
+    {
+        "_id": { "$oid": "665f1a1e1a1e1a1e1a1e1a02" },
+        "publisher_name": "Disney Hyperion",
+        "publish_location": null
+    },
+    {
+        "_id": { "$oid": "665f1a1e1a1e1a1e1a1e1a03" },
+        "publisher_name": "Tor Books",
+        "publish_location": "New York, NY"
+    },
+    {
+        "_id": { "$oid": "665f1a1e1a1e1a1e1a1e1a04" },
+        "publisher_name": "Vintage Books",
+        "publish_location": "London, UK"
+    },
+    {
+        "_id": { "$oid": "665f1a1e1a1e1a1e1a1e1a05" },
+        "publisher_name": "Penguin Random House",
+        "publish_location": "Chicago, IL"
+    }
+]

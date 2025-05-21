@@ -21,6 +21,48 @@
         }
       }
     },
+    "/books/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {"example" : "Mistborn"},
+                "isbn10": {"example" : null},
+                "isbn13": {"example" : "9785531554210"},
+                "publication_date": {"example" : "1999-02-28"},
+                "description": {"example" : "A no name is about to save the world when all others have failed."},
+                "age_range": {"example" : "12-18"},
+                "publisher": {"example" : { "$oid": "665f1a1e1a1e1a1e1a1e1a03" }}
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/api-docs": {
       "get": {
         "description": "",

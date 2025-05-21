@@ -1,0 +1,72 @@
+[
+    {
+        "_id": { "$oid": "665f1a1a0000000000000001" },
+        "title": "The Martian",
+        "isbn10": null,
+        "isbn13": "9780804139021",
+        "publication_date": "2014-02-11",
+        "description": "Six days ago, astronaut Mark Watney became one of the first people to walk on Mars...",
+        "age_range": "18+",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a05" }
+    },
+    {
+        "_id": { "$oid": "665f1a1a0000000000000002" },
+        "title": "Goodnight Moon",
+        "isbn10": null,
+        "isbn13": "9780061140036",
+        "publication_date": "1947-09-03",
+        "description": "In the great green room, there was a telephone and a red balloon...",
+        "age_range": "0-3",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a05" }
+    },
+    {
+        "_id": { "$oid": "665f1a1a0000000000000003" },
+        "title": "The Hobbit",
+        "isbn10": "054792822X",
+        "isbn13": "9780547928227",
+        "publication_date": "1937-09-21",
+        "description": "In a hole in the ground there lived a hobbit...",
+        "age_range": "8-11",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a05" }
+    },
+    {
+        "_id": { "$oid": "665f1a1a0000000000000004" },
+        "title": "The Very Hungry Caterpillar",
+        "isbn10": "0399226907",
+        "isbn13": null,
+        "publication_date": "1969-03-20",
+        "description": "In the light of the moon a little egg lay on a leaf.",
+        "age_range": "0-3",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a04" }
+    },
+    {
+        "_id": { "$oid": "665f1a1a0000000000000005" },
+        "title": "Divergent",
+        "isbn10": null,
+        "isbn13": "9780062024022",
+        "publication_date": "2011-05-03",
+        "description": "One choice can transform you.",
+        "age_range": "12-18",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a04" }
+    },
+    {
+        "_id": { "$oid": "665f1a1a0000000000000006" },
+        "title": "The Way of Kings",
+        "isbn10": null,
+        "isbn13": "9781234561235",
+        "publication_date": "2010-05-24",
+        "description": "Unite them. Speak again the ancient oaths.",
+        "age_range": "12-18",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a03" }
+    },
+    {
+        "_id": { "$oid": "665f1a1a0000000000000007" },
+        "title": "Mistborn",
+        "isbn10": null,
+        "isbn13": "9785531554210",
+        "publication_date": "1999-02-28",
+        "description": "A no name is about to save the world when all others have failed.",
+        "age_range": "12-18",
+        "publisher": { "$oid": "665f1a1e1a1e1a1e1a1e1a03" }
+    }
+]
