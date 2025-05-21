@@ -5,8 +5,8 @@ const doc = {
     title: "Clean Reads API",
     description: "API for managing Books",
   },
-  host: "localhost:3000",
-  schemes: ["http"],
+  host: "cse341cleanreads.onrender.com",
+  schemes: ["https"],
 };
 const outputFile = "./swagger.json";
 const endpointsFiles = ["./routes/index.js"];

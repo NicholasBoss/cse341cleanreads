@@ -5,10 +5,10 @@
     "description": "API for managing Books",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341cleanreads.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
@@ -48,7 +48,7 @@
                 "publication_date": {"example" : "1999-02-28"},
                 "description": {"example" : "A no name is about to save the world when all others have failed."},
                 "age_range": {"example" : "12-18"},
-                "publisher": {"example" : { "$oid": "665f1a1e1a1e1a1e1a1e1a03" }}
+                "publisher": {"$oid": "665f1a1e1a1e1a1e1a1e1a03"}
               }
             }
           }
