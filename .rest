@@ -1,0 +1,167 @@
+# REST Client for Visual Studio Code
+
+# Local dev link and Prod link:
+@devURL = http://localhost:3000
+@prodURL = https://cse341cleanreads.onrender.com
+
+###################################################
+# Variables
+
+@publisherID = ''
+
+########################################################################
+## Local Development
+### Get All Books
+GET {{devURL}}/books
+
+### Get First Book
+GET {{devURL}}/books/665f1a1a0000000000000001
+
+### Get Second Book
+GET {{devURL}}/books/665f1a1a0000000000000002
+
+### Get Third Book
+GET {{devURL}}/books/665f1a1a0000000000000003
+
+### Add a Book
+POST {{devURL}}/books/
+Content-Type: application/json
+
+{
+    "title": "A New Tale",
+    "isbn10": null,
+    "isbn13": "9785531574210",
+    "publication_date": "2025-05-21",
+    "description": "A new tale is coming and a new adventure awaits.",
+    "age_range": "12-18",
+    "publisher": "665f1a1e1a1e1a1e1a1e1a03"
+}
+
+### Update Book
+PUT {{devURL}}/books/682f4668963f77460caaa77c
+Content-Type: application/json
+
+{
+    "title": "An Old Tale",
+    "isbn10": null,
+    "isbn13": "9785531574210",
+    "publication_date": "2025-05-21",
+    "description": "An old tale has passed and an adventure fulfilled.",
+    "age_range": "12-18",
+    "publisher": "665f1a1e1a1e1a1e1a1e1a03"
+}
+
+### Delete Book
+DELETE {{devURL}}/books/682f4668963f77460caaa77c
+
+### Get All Publishers
+GET {{devURL}}/publishers
+
+### Get First Publisher
+GET {{devURL}}/publishers/665f1a1e1a1e1a1e1a1e1a01
+
+## Get Second Publisher
+GET {{devURL}}/publishers/665f1a1e1a1e1a1e1a1e1a02
+
+## Get Third Publisher
+GET {{devURL}}/publishers/665f1a1e1a1e1a1e1a1e1a03
+
+## Get Fourth Publisher
+GET {{devURL}}/publishers/665f1a1e1a1e1a1e1a1e1a04
+
+## Get Fifth Publisher
+GET {{devURL}}/publishers/665f1a1e1a1e1a1e1a1e1a05
+
+### Add a New Publisher
+POST {{devURL}}/publishers/
+Content-Type: application/json
+
+{
+  "publisher_name": "Clean New Reads",
+  "publish_location": "Rexburg, ID"
+}
+
+### Update a Publisher
+PUT {{devURL}}/publishers/{{publisherID}}
+
+### Delete a Publisher
+DELETE {{devURL}}/publishers/{{publisherID}}
+
+#######################################################################################
+## Production Environment
+
+### Get All Books
+GET {{prodURL}}/books
+
+### Get First Book
+GET {{prodURL}}/books/665f1a1a0000000000000001
+
+### Get Second Book
+GET {{prodURL}}/books/665f1a1a0000000000000002
+
+### Get Third Book
+GET {{prodURL}}/books/665f1a1a0000000000000003
+
+### Add a Book
+POST {{prodURL}}/books/
+Content-Type: application/json
+
+{
+    "title": "A New Tale",
+    "isbn10": null,
+    "isbn13": "9785531574210",
+    "publication_date": "2025-05-21",
+    "description": "A new tale is coming and a new adventure awaits.",
+    "age_range": "12-18",
+    "publisher": "665f1a1e1a1e1a1e1a1e1a03"
+}
+
+### Update Book
+PUT {{prodURL}}/books/682f4668963f77460caaa77c
+Content-Type: application/json
+
+{
+    "title": "An Old Tale",
+    "isbn10": null,
+    "isbn13": "9785531574210",
+    "publication_date": "2025-05-21",
+    "description": "An old tale has passed and an adventure fulfilled.",
+    "age_range": "12-18",
+    "publisher": "665f1a1e1a1e1a1e1a1e1a03"
+}
+
+### Delete Book
+DELETE {{prodURL}}/books/682f4668963f77460caaa77c
+
+### Get All Publishers
+GET {{prodURL}}/publishers
+
+### Get First Publisher
+GET {{prodURL}}/publishers/665f1a1e1a1e1a1e1a1e1a01
+
+## Get Second Publisher
+GET {{prodURL}}/publishers/665f1a1e1a1e1a1e1a1e1a02
+
+## Get Third Publisher
+GET {{prodURL}}/publishers/665f1a1e1a1e1a1e1a1e1a03
+
+## Get Fourth Publisher
+GET {{prodURL}}/publishers/665f1a1e1a1e1a1e1a1e1a04
+
+## Get Fifth Publisher
+GET {{prodURL}}/publishers/665f1a1e1a1e1a1e1a1e1a05
+
+### Add a New Publisher
+POST {{prodURL}}/publishers/
+Content-Type: application/json
+
+{
+  "publisher_name": "Clean New Reads",
+  "publish_location": "Rexburg, ID"
+}
+
+### Update a Publisher
+PUT {{prodURL}}/publishers/{{publisherID}}
+
+### Delete a Publisher
+DELETE {{prodURL}}/publishers/{{publisherID}}
