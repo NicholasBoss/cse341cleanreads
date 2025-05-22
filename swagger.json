@@ -163,7 +163,7 @@
               "type": "object",
               "properties": {
                 "publisher_name": {"example" : "Simon & Schuster"},
-                "publisher_location": {"example" : "New York, NY"}
+                "publish_location": {"example" : "New York, NY"}
                 
               }
             }
@@ -218,7 +218,7 @@
               "type": "object",
               "properties": {
                 "publisher_name": {"example" : "Simon & Schuster"},
-                "publisher_location": {"example" : "New York, NY"}
+                "publish_location": {"example" : "New York, NY"}
                 
               }
             }
