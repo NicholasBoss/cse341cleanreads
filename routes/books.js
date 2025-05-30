@@ -1,10 +1,12 @@
 const routes = require('express').Router();
 const bookController = require('../controllers/bookController');
+const validate = require('../utilities/validation');
+const util = require('../utilities');
 
-routes.get('/', bookController.getAllBooks);
-routes.get('/:id', bookController.getBookById);
-routes.post('/', bookController.addBook);
-routes.put('/:id', bookController.updateBook);
-routes.delete('/:id', bookController.deleteBook);
+routes.get('/', util.handleErrors(bookController.getAllBooks));
+routes.get('/:id', util.handleErrors(bookController.getBookById));
+routes.post('/', validate.validateBook(), util.handleErrors(bookController.addBook));
+routes.put('/:id', validate.validateBook(), util.handleErrors(bookController.updateBook));
+routes.delete('/:id', util.handleErrors(bookController.deleteBook));
 
 module.exports = routes;

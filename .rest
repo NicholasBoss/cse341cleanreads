@@ -7,7 +7,8 @@
 ###################################################
 # Variables
 
-@publisherID = ''
+@bookID = 
+@publisherID = 
 
 ########################################################################
 ## Local Development
@@ -38,7 +39,7 @@ Content-Type: application/json
 }
 
 ### Update Book
-PUT {{devURL}}/books/682f4668963f77460caaa77c
+PUT {{devURL}}/books/{{bookID}}
 Content-Type: application/json
 
 {
@@ -52,7 +53,7 @@ Content-Type: application/json
 }
 
 ### Delete Book
-DELETE {{devURL}}/books/682f4668963f77460caaa77c
+DELETE {{devURL}}/books/{{bookID}}
 
 ### Get All Publishers
 GET {{devURL}}/publishers
@@ -83,6 +84,12 @@ Content-Type: application/json
 
 ### Update a Publisher
 PUT {{devURL}}/publishers/{{publisherID}}
+Content-Type: application/json
+
+{
+  "publisher_name": "Clean Old Reads",
+  "publish_location": "Rexburg, ID"
+}
 
 ### Delete a Publisher
 DELETE {{devURL}}/publishers/{{publisherID}}
@@ -117,7 +124,7 @@ Content-Type: application/json
 }
 
 ### Update Book
-PUT {{prodURL}}/books/682f4668963f77460caaa77c
+PUT {{prodURL}}/books/{{bookID}}
 Content-Type: application/json
 
 {
@@ -131,7 +138,7 @@ Content-Type: application/json
 }
 
 ### Delete Book
-DELETE {{prodURL}}/books/682f4668963f77460caaa77c
+DELETE {{prodURL}}/books/{{bookID}}
 
 ### Get All Publishers
 GET {{prodURL}}/publishers
@@ -162,6 +169,12 @@ Content-Type: application/json
 
 ### Update a Publisher
 PUT {{prodURL}}/publishers/{{publisherID}}
+Content-Type: application/json
+
+{
+  "publisher_name": "Clean Old Reads",
+  "publish_location": "Rexburg, ID"
+}
 
 ### Delete a Publisher
 DELETE {{prodURL}}/publishers/{{publisherID}}

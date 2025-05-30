@@ -1,10 +1,12 @@
 const routes = require('express').Router();
 const publisherController = require('../controllers/publisherController');
+const validate = require('../utilities/validation');
+const util = require('../utilities');
 
-routes.get('/', publisherController.getAllPublishers);
-routes.get('/:id', publisherController.getPublisherById);
-routes.post('/', publisherController.addPublisher);
-routes.put('/:id', publisherController.updatePublisher);
-routes.delete('/:id', publisherController.deletePublisher);
+routes.get('/', util.handleErrors(publisherController.getAllPublishers));
+routes.get('/:id', util.handleErrors(publisherController.getPublisherById));
+routes.post('/', validate.validatePublisher(), util.handleErrors(publisherController.addPublisher));
+routes.put('/:id', validate.validatePublisher(), util.handleErrors(publisherController.updatePublisher));
+routes.delete('/:id', util.handleErrors(publisherController.deletePublisher));
 
 module.exports = routes;

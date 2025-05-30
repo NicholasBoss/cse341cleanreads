@@ -10,7 +10,7 @@ bookController.getAllBooks = async (req, res) => {
         const data = await collection.find({}).toArray();
         res.status(200).json(data)
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        res.status(500).json({status: statusbar, error: error.message })
     }
 }
 
@@ -25,11 +25,11 @@ bookController.getBookById = async (req, res) => {
 
         const data = await collection.findOne({ _id: new ObjectId(id) });
         if (!data) {
-            return res.status(404).json({ message: 'Book not found' });
+            return res.status(404).json({status: statusbar, message: 'Book not found' });
         }
         res.status(200).json(data)
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        res.status(500).json({ status: statusbar, error: error.message })
     }
 }
 
@@ -47,7 +47,7 @@ bookController.addBook = async (req, res) => {
         const data = await collection.insertOne(req.body);
         res.status(201).json(data)
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        res.status(500).json({status: statusbar, error: error.message })
     }
 }
 
@@ -65,7 +65,7 @@ bookController.updateBook = async (req, res) => {
         const data = await collection.updateOne({ _id: new ObjectId(id) }, { $set: req.body });
         res.status(200).json(data)
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        res.status(500).json({status: statusbar, error: error.message })
     }
 }
 
@@ -80,7 +80,7 @@ bookController.deleteBook = async (req, res) => {
         const data = await collection.deleteOne({ _id: new ObjectId(id) });
         res.status(200).json(data)
     } catch (error) {
-        res.status(500).json({ error: error.message })
+        res.status(500).json({status: statusbar, error: error.message })
     }
 }
 
