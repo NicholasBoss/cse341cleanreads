@@ -129,6 +129,16 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bookId": {"example" : "Object ID"}
+              }
+            }
           }
         ],
         "responses": {
