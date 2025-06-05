@@ -76,9 +76,17 @@ bookController.deleteBook = async (req, res) => {
         const database = mongodb.getDb().db('cleanreads');
 
         const collection = database.collection('books');
-
-        const data = await collection.deleteOne({ _id: new ObjectId(id) });
-        res.status(200).json(data)
+        // check to see if id exists in the database
+        const existingBook = await collection.findOne({ _id: new ObjectId(id) });
+        // console.log(existingBook)
+        if (existingBook) {
+            const data = await collection.deleteOne({ _id: new ObjectId(id) });
+            if (data.deletedCount === 0) {
+                return res.status(404).json({status: statusbar, message: 'Book not found' });
+            }
+            return res.status(200).json(data);
+        }
+        return res.status(404).json({status: statusbar, message: 'Book not found' });
     } catch (error) {
         res.status(500).json({status: statusbar, error: error.message })
     }

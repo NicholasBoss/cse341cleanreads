@@ -7,7 +7,7 @@
 ###################################################
 # Variables
 
-@bookID = 
+@bookID = 6841cf8d904fafda0564ae72
 @publisherID = 
 
 ########################################################################
@@ -54,6 +54,11 @@ Content-Type: application/json
 
 ### Delete Book
 DELETE {{devURL}}/books/{{bookID}}
+Content-Type: application/json
+
+{
+  "bookId": "{{bookID}}"
+}
 
 ### Get All Publishers
 GET {{devURL}}/publishers
@@ -139,6 +144,11 @@ Content-Type: application/json
 
 ### Delete Book
 DELETE {{prodURL}}/books/{{bookID}}
+Content-Type: application/json
+
+{
+  "bookId": "{{bookID}}"
+}
 
 ### Get All Publishers
 GET {{prodURL}}/publishers

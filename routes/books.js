@@ -7,6 +7,6 @@ routes.get('/', util.handleErrors(bookController.getAllBooks));
 routes.get('/:id', util.handleErrors(bookController.getBookById));
 routes.post('/', validate.validateBook(), util.handleErrors(bookController.addBook));
 routes.put('/:id', validate.validateBook(), util.handleErrors(bookController.updateBook));
-routes.delete('/:id', util.handleErrors(bookController.deleteBook));
+routes.delete('/:id', validate.validateBookId(), util.handleErrors(bookController.deleteBook));
 
 module.exports = routes;

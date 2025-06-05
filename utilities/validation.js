@@ -1,5 +1,6 @@
 
 const { body, validationResult } = require('express-validator')
+const mongodb = require('../database/connect')
 const validate = {}
 
 validate.bookValidationRules = () => {
@@ -76,4 +77,37 @@ validate.validatePublisher = () => {
     ];
 };
 
+validate.bookIdValidationRules = () => {
+// check the url parameter for a valid MongoDB ObjectId (Check to see if it exists in the database)
+    return [
+        body('bookId')
+        .notEmpty().withMessage('Book ID is required')
+        .isMongoId().withMessage('Invalid Book ID')
+        .custom(async (value, { req }) => {
+            const { ObjectId } = require('mongodb');
+            const database = mongodb.getDb().db('cleanreads');
+            
+            const collection = database.collection('books');
+            // check to see if id exists in the database
+            const existingBook = await collection.findOne({ _id: new ObjectId(value) });
+            if (!existingBook) {
+                throw new Error('Book not found');
+            }
+            return true;
+        })
+    ];
+}
+
+validate.validateBookId = () => {
+    return [
+        ...validate.bookIdValidationRules(),
+        (req, res, next) => {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({ errors: errors.array() });
+            }
+            next();
+        }
+    ];
+};
 module.exports = validate;
