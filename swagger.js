@@ -1,6 +1,7 @@
-const swaggerAutogen = require('swagger-autogen')();
+const swaggerAutogen = require('swagger-autogen')({ openapi: '3.0.0' });
 
 const doc = {
+  openapi: '3.0.0',
   info: {
     title: 'Clean Reads API',
     description: 'API for managing Books',

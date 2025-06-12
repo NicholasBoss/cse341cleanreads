@@ -21,7 +21,9 @@ const verifyGoogleToken = async (req, res, next) => {
     const payload = ticket.getPayload();
     req.user = payload; // Optional: Attach user info to request
 
-    next(); // ✅ Authorized
+    // redirect to api-docs
+    res.redirect('/api-docs');
+    next(); // Call next middleware or route handler
   } catch (err) {
     return res.status(401).json({ message: 'Unauthorized: Invalid or expired token' });
   }

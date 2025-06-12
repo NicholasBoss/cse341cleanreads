@@ -10,6 +10,7 @@ router.get("/api-docs", swaggerUi.setup(swaggerDocument, {
         oauth: {
             clientId: GOOGLE_CLIENT_ID,
             scopes: "openid email profile",
+            usePkceWithAuthorizationCodeGrant: true,    
         }
     }
 }));
