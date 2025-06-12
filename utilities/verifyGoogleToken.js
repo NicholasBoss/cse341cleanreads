@@ -15,6 +15,7 @@ async function authenticateToken(req, res, next) {
     });
 
     const payload = ticket.getPayload();
+    console.log('Token payload:', payload);
     req.user = payload;
     next();
   } catch (err) {
