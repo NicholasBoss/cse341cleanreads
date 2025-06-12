@@ -252,6 +252,18 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "publisher_name": {"example" : "Simon & Schuster"},
+                "publish_location": {"example" : "New York, NY"}
+                
+              }
+            }
           }
         ],
         "responses": {
