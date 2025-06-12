@@ -2,6 +2,7 @@ const routes = require('express').Router();
 const bookController = require('../controllers/bookController');
 const validate = require('../utilities/validation');
 const util = require('../utilities');
+const authenticateToken = require('../utilities/verifyGoogleToken');
 
 routes.get('/', util.handleErrors(bookController.getAllBooks));
 routes.get('/:id', util.handleErrors(bookController.getBookById));
@@ -47,8 +48,8 @@ routes.get('/:id', util.handleErrors(bookController.getBookById));
  *       201:
  *         description: Created
  */
-routes.post('/', validate.validateBook(), util.handleErrors(bookController.addBook));
-routes.put('/:id', validate.validateBook(), util.handleErrors(bookController.updateBook));
-routes.delete('/:id', validate.validateBookId(), util.handleErrors(bookController.deleteBook));
+routes.post('/', authenticateToken,  validate.validateBook(), util.handleErrors(bookController.addBook));
+routes.put('/:id', authenticateToken, validate.validateBook(), util.handleErrors(bookController.updateBook));
+routes.delete('/:id', authenticateToken, validate.validateBookId(), util.handleErrors(bookController.deleteBook));
 
 module.exports = routes;
