@@ -1,26 +1,22 @@
-const { OAuth2Client } = require('google-auth-library');
-// import env variables
-require('dotenv').config();
-const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+const axios = require('axios');
 
 async function authenticateToken(req, res, next) {
-  try {
-    const authHeader = req.headers['authorization'];
-    if (!authHeader) return res.status(401).json({ message: 'Missing token' });
+  const authHeader = req.headers['authorization'];
+  if (!authHeader) return res.status(401).json({ message: 'Missing token' });
 
-    const token = authHeader.split(' ')[1]; // Bearer <token>
-    const ticket = await client.verifyIdToken({
-      idToken: token,
-      audience: process.env.GOOGLE_CLIENT_ID,
+  const token = authHeader.split(' ')[1];
+
+  try {
+    const response = await axios.get(`https://www.googleapis.com/oauth2/v3/userinfo`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     });
 
-    const payload = ticket.getPayload();
-    console.log('Token payload:', payload);
-    req.user = payload;
+    req.user = response.data; // Contains user info like email, name, etc.
     next();
   } catch (err) {
-    console.error(err);
+    console.error(err.response?.data || err.message);
     return res.status(401).json({ message: 'Unauthorized: Invalid or expired token' });
   }
 }
-module.exports = authenticateToken;
