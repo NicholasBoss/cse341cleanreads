@@ -1,32 +1,25 @@
 const { OAuth2Client } = require('google-auth-library');
 // import env variables
-require('dotenv').config(); // Ensure you have dotenv installed and configured
-
+require('dotenv').config();
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-const verifyGoogleToken = async (req, res, next) => {
+async function authenticateToken(req, res, next) {
   try {
     const authHeader = req.headers['authorization'];
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return res.status(401).json({ message: 'Missing or invalid Authorization header' });
-    }
+    if (!authHeader) return res.status(401).json({ message: 'Missing token' });
 
-    const token = authHeader.split(' ')[1];
-
+    const token = authHeader.split(' ')[1]; // Bearer <token>
     const ticket = await client.verifyIdToken({
       idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
     });
 
     const payload = ticket.getPayload();
-    req.user = payload; // Optional: Attach user info to request
-
-    // redirect to api-docs
-    res.redirect('/api-docs');
-    next(); // Call next middleware or route handler
+    req.user = payload;
+    next();
   } catch (err) {
+    console.error(err);
     return res.status(401).json({ message: 'Unauthorized: Invalid or expired token' });
   }
-};
-
-module.exports = verifyGoogleToken;
+}
+module.exports = authenticateToken;
