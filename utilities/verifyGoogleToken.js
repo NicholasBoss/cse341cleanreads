@@ -20,3 +20,5 @@ async function authenticateToken(req, res, next) {
     return res.status(401).json({ message: 'Unauthorized: Invalid or expired token' });
   }
 }
+
+module.exports = authenticateToken;
