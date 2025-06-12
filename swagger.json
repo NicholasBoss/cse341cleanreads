@@ -79,16 +79,39 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "title": {"example" : "Mistborn"},
-                "isbn10": {"example" : "9785531554 or null"},
-                "isbn13": {"example" : "9785531554210"},
-                "publication_date": {"example" : "1999-02-28"},
-                "description": {"example" : "A no name is about to save the world when all others have failed."},
-                "age_range": {"example" : "12-18"},
-                "publisher": {"example": "Object ID of Publisher: 665f1a1e1a1e1a1e1a1e1a03"}
+                "title": {
+                  "type": "string",
+                  "example": "Mistborn"
+                },
+                "isbn10": {
+                  "type": "string",
+                  "example": "9785531554"
+                },
+                "isbn13": {
+                  "type": "string",
+                  "example": "9785531554210"
+                },
+                "publication_date": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "1999-02-28"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "A no name is about to save the world when all others have failed."
+                },
+                "age_range": {
+                  "type": "string",
+                  "example": "12-18"
+                },
+                "publisher": {
+                  "type": "string",
+                  "example": "665f1a1e1a1e1a1e1a1e1a03"
+                }
               }
             }
           }

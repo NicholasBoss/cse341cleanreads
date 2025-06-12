@@ -58,6 +58,7 @@ app.use(expressLayouts)
 // app.set("layout", "./layouts/layout")
 
 app.use(express.static('public'));
+app.use(express.json());
 
 app.use('/', routes);
 
