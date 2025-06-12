@@ -72,6 +72,9 @@
       },
       "post": {
         "description": "",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "body",
@@ -121,6 +124,9 @@
       },
       "put": {
         "description": "",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -158,6 +164,9 @@
       },
       "delete": {
         "description": "",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -199,6 +208,9 @@
       },
       "post": {
         "description": "",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "body",
@@ -244,6 +256,9 @@
       },
       "put": {
         "description": "",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -277,6 +292,9 @@
       },
       "delete": {
         "description": "",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
