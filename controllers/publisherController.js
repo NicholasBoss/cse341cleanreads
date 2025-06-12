@@ -3,7 +3,7 @@ const mongodb = require('../database/connect')
 
 publisherController.getAllPublishers = async (req, res) => {
     try {
-        // const database = mongodb.getDb().db('cleanreads');
+        const database = mongodb.getDb().db('cleanreads');
 
         const collection = database.collection('publishers');
 

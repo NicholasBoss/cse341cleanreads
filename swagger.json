@@ -292,7 +292,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "bookId": {"example" : "Object ID"}
+                "publisherId": {"example" : "Object ID"}
               }
             }
           }
