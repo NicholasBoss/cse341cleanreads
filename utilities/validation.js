@@ -59,8 +59,8 @@ validate.publisherValidationRules = () => {
     return [
         body('publisher_name')
         .notEmpty().withMessage('Publisher name is required'),
-        body('publisher_location')
-        .notEmpty().withMessage('Publisher location is required')
+        body('publish_location')
+        .notEmpty().withMessage('Publish location is required')
     ];
 }
 
