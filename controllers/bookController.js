@@ -18,7 +18,7 @@ bookController.getBookById = async (req, res) => {
     try {
         const { ObjectId } = require('mongodb');
         let id = req.params.id;
-        console.log(id)
+        // console.log(id)
         const database = mongodb.getDb().db('cleanreads');
 
         const collection = database.collection('books');
@@ -36,7 +36,7 @@ bookController.getBookById = async (req, res) => {
 bookController.addBook = async (req, res) => {
     try {
         // transform the string from publisher to objectId
-        console.log(req.body)
+        // console.log(req.body)
         const { ObjectId } = require('mongodb');
         if (req.body.publisher) {
             req.body.publisher = new ObjectId(req.body.publisher);

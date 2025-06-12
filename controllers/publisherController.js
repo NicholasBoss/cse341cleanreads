@@ -18,7 +18,7 @@ publisherController.getPublisherById = async (req, res) => {
     try {
         const { ObjectId } = require('mongodb');
         let id = req.params.id;
-        console.log(id)
+        // console.log(id)
         const database = mongodb.getDb().db('cleanreads');
 
         const collection = database.collection('publishers');
