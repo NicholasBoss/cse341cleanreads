@@ -29,8 +29,8 @@ routes.get('/logout', (req, res) => {
     res.redirect('/');
   });
 });
-routes.use('/books', bookRoute);
-routes.use('/publishers', publisherRoute);
-routes.use('/', util.ensureAuthenticated,  swagger);
+routes.use('/books', util.ensureAuthenticated, bookRoute);
+routes.use('/publishers', util.ensureAuthenticated, publisherRoute);
+routes.use('/', swagger);
 
 module.exports = routes;

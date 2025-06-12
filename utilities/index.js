@@ -5,7 +5,9 @@ Util.ensureAuthenticated = (req, res, next) => {
     return next();
   }
   // Redirect to login page if not authenticated
-  res.redirect('/');
+  res.sendStatus(401).json({
+    error: 'Unauthorized access. Please log in.'
+  });
 }
 
 /* ****************************************
