@@ -5,6 +5,7 @@ const publisherRoute = require('./publishers');
 const swagger = require('./swagger');
 const passport = require('passport');
 const util = require('../utilities');
+const verifyGoogleToken = require('../utilities/verifyGoogleToken');
 
 routes.get('/', baseController.welcomeRoute);
 routes.get('/auth/google',
@@ -29,7 +30,7 @@ routes.get('/logout', (req, res) => {
     res.redirect('/');
   });
 });
-routes.use('/books', util.ensureAuthenticated, bookRoute);
+routes.use('/books', verifyGoogleToken, bookRoute);
 /**
  * @swagger
  * /books:
@@ -42,7 +43,7 @@ routes.use('/books', util.ensureAuthenticated, bookRoute);
  *         description: List of books
  */
 
-routes.use('/publishers', util.ensureAuthenticated, publisherRoute);
+routes.use('/publishers', verifyGoogleToken, publisherRoute);
 routes.use('/', swagger);
 
 module.exports = routes;
