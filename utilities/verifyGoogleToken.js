@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
-  if (!authHeader) return res.status(401).json({ message: 'Missing token' });
+  if (!authHeader) return res.status(401).json({ message: 'Missing token, please log in' });
 
   const token = authHeader.split(' ')[1];
 
