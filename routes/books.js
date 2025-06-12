@@ -48,10 +48,7 @@ routes.get('/:id', util.handleErrors(bookController.getBookById));
  *       201:
  *         description: Created
  */
-routes.post('/', authenticateToken, (req, res) => {
-  console.log('BODY:', req.body);
-  res.status(201).json({ message: 'Book created' });
-});
+routes.post('/', authenticateToken,  validate.validateBook(), util.handleErrors(bookController.addBook));
 routes.put('/:id', authenticateToken, validate.validateBook(), util.handleErrors(bookController.updateBook));
 routes.delete('/:id', authenticateToken, validate.validateBookId(), util.handleErrors(bookController.deleteBook));
 
