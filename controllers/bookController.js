@@ -36,6 +36,7 @@ bookController.getBookById = async (req, res) => {
 bookController.addBook = async (req, res) => {
     try {
         // transform the string from publisher to objectId
+        console.log(req.body)
         const { ObjectId } = require('mongodb');
         if (req.body.publisher) {
             req.body.publisher = new ObjectId(req.body.publisher);

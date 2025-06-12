@@ -42,8 +42,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       swagger-ui-express:
-        specifier: ^5.0.1
-        version: 5.0.1(express@5.1.0)
+        specifier: ^3.0.10
+        version: 3.0.10
     devDependencies:
       nodemon:
         specifier: ^3.1.10
@@ -56,9 +56,6 @@ packages:
 
   '@mongodb-js/saslprep@1.2.2':
     resolution: {integrity: sha512-EB0O3SCSNRUFk66iRCpI+cXzIjdswfCs7F6nOC3RAGJ7xr5YhaicvsRwJ9eyzYvYRlCSDUO/c7g4yNulxKC1WA==}
-
-  '@scarf/scarf@1.4.0':
-    resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
 
   '@types/webidl-conversions@7.0.3':
     resolution: {integrity: sha512-CiJJvcRtIgzadHCYXw7dqEnMNRjhGZlYK05Mj9OyktqV8uVT8fD2BFOB7S1uwBE3Kj2Z+4UyPmFw/Ixgw/LAlA==}
@@ -663,14 +660,9 @@ packages:
   swagger-autogen@2.23.7:
     resolution: {integrity: sha512-vr7uRmuV0DCxWc0wokLJAwX3GwQFJ0jwN+AWk0hKxre2EZwusnkGSGdVFd82u7fQLgwSTnbWkxUL7HXuz5LTZQ==}
 
-  swagger-ui-dist@5.22.0:
-    resolution: {integrity: sha512-8YlCSxiyb8uPFa7qoB1lRHYr1PBbT1NuV9RvQdFFPFPudRBTPf9coU5jl02KhzvrtmTEw4jXRgb0kg8pJvVuWQ==}
-
-  swagger-ui-express@5.0.1:
-    resolution: {integrity: sha512-SrNU3RiBGTLLmFU8GIJdOdanJTl4TOmT27tt3bWWHppqYmAZ6IDuEuBvMU6nZq0zLEe6b/1rACXCgLZqO6ZfrA==}
+  swagger-ui-express@3.0.10:
+    resolution: {integrity: sha512-vP0sHXTm8w0kwpy4z9tBe1sTOyIc807PvkBNrfBPMieeRrl3NbjUnz7KgOygkzmz4QBhd4fo3efFKcwR42vcjQ==}
     engines: {node: '>= v0.10.32'}
-    peerDependencies:
-      express: '>=4.0.0 || >=5.0.0-beta'
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -738,8 +730,6 @@ snapshots:
   '@mongodb-js/saslprep@1.2.2':
     dependencies:
       sparse-bitfield: 3.0.3
-
-  '@scarf/scarf@1.4.0': {}
 
   '@types/webidl-conversions@7.0.3': {}
 
@@ -1377,14 +1367,7 @@ snapshots:
       glob: 7.2.3
       json5: 2.2.3
 
-  swagger-ui-dist@5.22.0:
-    dependencies:
-      '@scarf/scarf': 1.4.0
-
-  swagger-ui-express@5.0.1(express@5.1.0):
-    dependencies:
-      express: 5.1.0
-      swagger-ui-dist: 5.22.0
+  swagger-ui-express@3.0.10: {}
 
   to-regex-range@5.0.1:
     dependencies:
