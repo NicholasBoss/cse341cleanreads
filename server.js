@@ -57,7 +57,8 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 // app.set("layout", "./layouts/layout")
 
-app.use(static);
+app.use(express.static('public'));
+
 app.use('/', routes);
 
 // File Not Found Route - must be last route in list
