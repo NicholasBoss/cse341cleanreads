@@ -30,6 +30,18 @@ routes.get('/logout', (req, res) => {
   });
 });
 routes.use('/books', util.ensureAuthenticated, bookRoute);
+/**
+ * @swagger
+ * /books:
+ *   get:
+ *     summary: Get all books
+ *     security:
+ *       - OAuth2: [openid, email, profile]
+ *     responses:
+ *       200:
+ *         description: List of books
+ */
+
 routes.use('/publishers', util.ensureAuthenticated, publisherRoute);
 routes.use('/', swagger);
 
