@@ -71,10 +71,8 @@
         }
       },
       "post": {
-        "description": "",
-        "consumes": [
-          "application/json"
-        ],
+        "description": "Create a new book",
+        "consumes": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -117,11 +115,17 @@
           }
         ],
         "responses": {
+          "201": {
+            "description": "Created"
+          },
           "400": {
             "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
