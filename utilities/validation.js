@@ -77,6 +77,40 @@ validate.validatePublisher = () => {
     ];
 };
 
+validate.publisherIdValidationRules = () => {
+// check the url parameter for a valid MongoDB ObjectId (Check to see if it exists in the database)
+    return [
+        body('publisherId')
+        .notEmpty().withMessage('Publisher ID is required')
+        .isMongoId().withMessage('Invalid Publisher ID')
+        .custom(async (value, { req }) => {
+            const { ObjectId } = require('mongodb');
+            const database = mongodb.getDb().db('cleanreads');
+            
+            const collection = database.collection('publishers');
+            // check to see if id exists in the database
+            const existingPublisher = await collection.findOne({ _id: new ObjectId(value) });
+            if (!existingPublisher) {
+                throw new Error('Publisher not found');
+            }
+            return true;
+        })
+    ];
+}
+
+validate.validatePublisherId = () => {
+    return [
+        ...validate.publisherIdValidationRules(),
+        (req, res, next) => {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({ errors: errors.array() });
+            }
+            next();
+        }
+    ];
+}
+
 validate.bookIdValidationRules = () => {
 // check the url parameter for a valid MongoDB ObjectId (Check to see if it exists in the database)
     return [

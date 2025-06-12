@@ -7,6 +7,6 @@ routes.get('/', util.handleErrors(publisherController.getAllPublishers));
 routes.get('/:id', util.handleErrors(publisherController.getPublisherById));
 routes.post('/', validate.validatePublisher(), util.handleErrors(publisherController.addPublisher));
 routes.put('/:id', validate.validatePublisher(), util.handleErrors(publisherController.updatePublisher));
-routes.delete('/:id', util.handleErrors(publisherController.deletePublisher));
+routes.delete('/:id', validate.validatePublisherId(), util.handleErrors(publisherController.deletePublisher));
 
 module.exports = routes;
